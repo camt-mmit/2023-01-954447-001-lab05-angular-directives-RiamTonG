@@ -1,0 +1,22 @@
+<h2>Try Three</h2>
+
+<a href="http://localhost:4200/try-one">Try-One</a><br />
+<a href="http://localhost:4200/try-two">Try-Two</a><br /><br />
+
+<button type="button" (click)="add()">Add</button>
+<div class="cmp-inputs-list">
+  <div *ngFor="let item of items; let i = index">
+    <label>
+      <span>Input {{ i + 1 }}</span>
+      <input
+        #elem
+        type="number"
+        [value]="item.value"
+        (change)="onChange(i, elem.valueAsNumber)"
+      />
+    </label>
+    <button type="button" (click)="delete(i)">Delete</button>
+  </div>
+</div>
+
+<output>{{ getResult() }}</output>
