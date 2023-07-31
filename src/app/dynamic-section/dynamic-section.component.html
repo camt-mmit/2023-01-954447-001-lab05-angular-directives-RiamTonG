@@ -1,0 +1,19 @@
+<h2>Dynamic!</h2>
+
+<a href="http://localhost:4200/try-one">Try-One</a><br />
+<a href="http://localhost:4200/try-two">Try-Two</a><br />
+<a href="http://localhost:4200/try-three">Try-Two</a><br /><br />
+
+<body>
+  <button class="add-section" type="button" (click)="add()">Section</button>
+  <div class="app-main-container">
+    <div class="cmp-sections-list">
+      <div *ngFor="let item of items; let i = index">
+        <span>Section {{ i + 1 }} </span>
+
+        <button type="button" (click)="delete(i)">Delete</button>
+        <app-dynamic-input></app-dynamic-input>
+      </div>
+    </div>
+  </div>
+</body>
